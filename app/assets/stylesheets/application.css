@@ -13,3 +13,14 @@
  *= require_tree .
  *= require_self
  */
+
+#header {
+    background-image: url("/IMG_4549.JPG")
+}
+table {
+    border-collapse: collapse;
+}
+th, td {
+    border: solid 1px;
+    padding: 0.5em;
+}
