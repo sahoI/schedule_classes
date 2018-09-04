@@ -1,0 +1,14 @@
+<ul>
+  <li>Title <%= @title %></li>
+  <li>ReleasedAt <%= @released_at %></li>
+  <li>ReleasetAt <%= @releaset_at %></li>
+  <li>ImageUrl <%= @image_url %></li>
+  <li>ThumbsSize <%= @thumbs_size %></li>
+  <% @thumbs.each do |thumb| %>
+    <% @thumb = p thumb.xpath('img').attribute('src') %>
+    <li>Thumbs <%= @thumb %></li>
+    <% end %>
+  <li>Description <%= @description %></li>
+  <li>Staff <%= @staff %></li>
+  <li>Cast <%= @cast %></li>
+</ul>
