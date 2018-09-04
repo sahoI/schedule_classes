@@ -37,7 +37,6 @@ class WethreappController < ApplicationController
     # doc.xpath('//adiv[@class="moveInfoBox"]/h2').each do |node|
       #title
       @title = p doc.title
-          # xpath('//div[@class="moveInfoBox"]/h2')
 
       #released_at
       @released_at = p doc.xpath('//div[@class="moveInfoBox"]/span[@class="opn_date"]/strong').text
