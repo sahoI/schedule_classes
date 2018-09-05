@@ -20,6 +20,7 @@ class WethreappController < ApplicationController
     @teacher = p doc.xpath('//td[@class="syllabus_item_left syllabus_frame_RB"]/span[@class="font_data"]').text
     tds = doc.xpath('//td[@class="syllabus_item_left syllabus_frame_LRB space_top_bottom"]')
     @value = p tds[6].text
+    @textbook = p tds[7].text
 
   end
   def scraipe
