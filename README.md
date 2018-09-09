@@ -22,3 +22,8 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+home:トップページ
+registration:授業の登録
+
+wetherapp:スクレイピング
