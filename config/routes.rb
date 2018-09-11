@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'home/index' => 'home#index'
+  get 'registration/index' => 'registration#index'
+  get '/' => 'home#index'
   get 'wethreapp/index' => 'wethreapp#index'
   get 'wethreapp/show' => 'wethreapp#show'
   get 'wethreapp/scraipe' => 'wethreapp#scraipe'
