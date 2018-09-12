@@ -1,0 +1,2 @@
+class Reregistrate < ApplicationRecord
+end
