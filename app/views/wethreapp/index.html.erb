@@ -1,2 +1,6 @@
 <h1>Wethreapp#index</h1>
 <p>Find me in app/views/wethreapp/index.html.erb</p>
+
+<% @titles.each do |title| %>
+  [タイトル] <%= title.name %>, [発売日] <%= title.sales_date %><br />
+<% end %>

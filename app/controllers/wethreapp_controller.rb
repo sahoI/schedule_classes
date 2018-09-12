@@ -1,5 +1,6 @@
 class WethreappController < ApplicationController
   def index
+    @titles = Hoge.all
   end
 
   def show
