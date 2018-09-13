@@ -1,0 +1,27 @@
+<head>
+  <title>Home index</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<div class="header">
+  <div class="header-logo">User Data</div>
+</div>
+<body>
+<%= @users.each do |user| %>
+<ul>
+  <li>
+    <%= user.id%>
+    <%= user.name%>
+    <%= user.email%>
+    <%= user.department%>
+    <%= user.friend_id%>
+  </li>
+</ul>
+<% end %>
+<!--<ul>-->
+<!--  <li><%#= @user.name %></li>-->
+<!--  <li><%#= @user.email %></li>-->
+<!--  <li><%#= @user.department %></li>-->
+<!--  <li><%#= @user.friend_id %></li>-->
+<!--</ul>-->
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>-->
+</body>
