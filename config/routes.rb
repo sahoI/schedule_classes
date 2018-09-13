@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get 'registration/thurs' => 'registration#thurs'
   get 'registration/fri' => 'registration#fri'
   get 'registration/satur' => 'registration#satur'
+  get 'registration/show' => 'registration#show'
+  post 'registration/create' => 'registration#create'
   get '/' => 'home#index'
   get 'wethreapp/index' => 'wethreapp#index'
   get 'wethreapp/show' => 'wethreapp#show'

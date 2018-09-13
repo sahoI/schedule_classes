@@ -17,7 +17,13 @@
   </tr>
   <tr>
     <td>Monday</td>
-    <td><%= link_to('登録',"/registration/mon") %></td>
+    <td>
+      <%# if @class %>
+      <li><%= @class.name %></li>
+      <li><%= @class.class_id %></li>
+      <%# end %>
+      <%= link_to('登録',"/registration/mon") %>
+    </td>
     <td><%= link_to('登録',"/registration/mon") %></td>
     <td><%= link_to('登録',"/registration/mon") %></td>
     <td><%= link_to('登録',"/registration/mon") %></td>
