@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   get 'registration/satur' => 'registration#satur'
   get 'registration/show' => 'registration#show'
   post 'registration/create' => 'registration#create'
+  get 'user/new' => 'user#new'
+  get 'user/show' => 'user#show'
+  post 'user/create' => 'user#create'
+
   get '/' => 'home#index'
   get 'wethreapp/index' => 'wethreapp#index'
   get 'wethreapp/show' => 'wethreapp#show'
