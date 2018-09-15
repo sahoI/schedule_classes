@@ -1,15 +1,9 @@
-<head>
-  <title>New User</title>
-  <link rel="stylesheet" type="text/sass" href="user.sass">
-</head>
-<div class="header">
-  <div class="header-logo">New User</div>
-</div>
-<body>
+<div class="container">
+  <h1 class="form-header" >New User</h1>
   <div class="form-body">
     <%= form_for :user, url: '/user/create' do |f| %>
       <p>
-        <%= f.text_field :name, placeholder: 'enter name', html: {class: 'form'} %>
+        <%= f.text_field :name, placeholder: 'enter name' %>
         <% if @user.errors.messages[:name].any? %>
           <span class="error">
             <%= @user.errors.messages[:name][0] %>
@@ -60,4 +54,4 @@
       <%= f.submit %>
     <% end %>
   </div>
-</body>
+</div>
