@@ -37,4 +37,8 @@ class UserController < ApplicationController
       render("/user/new")
     end
   end
+  def search
+    #ViewのFormで取得したパラメータをモデルに渡す
+    @friendIds = User.search(params[:friend_id])
+  end
 end

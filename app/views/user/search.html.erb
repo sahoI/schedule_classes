@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="form-body">
+    <%= form_tag(search_path, :method => 'get') do %>
+      <%= text_field_tag :friend_id %>
+      <%= submit_tag 'Search', :name => nil %>
+    <% end %>
+    <% if @friendIds %>
+      <ul>
+        <% @friendIds.each do |friendId| %>
+          <li>
+            <%= friendId.id %>
+            <%= link_to(friendId.name, "/user/#{friendId.id}") %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+  </div>
+</div>

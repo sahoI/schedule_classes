@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   post 'user/create' => 'user#create'
   get 'login' => 'user#login_form'
   post 'login' => 'user#login'
+  get 'search' => 'user#search'
   get 'user/:id' => 'user#index'
 
 
