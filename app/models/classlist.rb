@@ -1,0 +1,2 @@
+class Classlist < ApplicationRecord
+end
