@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
   get 'registration/index' => 'registration#index'
+  get 'registration/new' => 'registration#new'
+
   get 'registration/mon' => 'registration#mon'
   get 'registration/tues' => 'registration#tues'
   get 'registration/wednes' => 'registration#wednes'
   get 'registration/thurs' => 'registration#thurs'
   get 'registration/fri' => 'registration#fri'
   get 'registration/satur' => 'registration#satur'
-  get 'registration/show' => 'registration#show'
+
   post 'registration/create' => 'registration#create'
   get 'user/new' => 'user#new'
   get 'user/show' => 'user#show'

@@ -5,7 +5,6 @@ class RegistrationController < ApplicationController
 
   def create
     @class = Register.new(post_params)
-    # render plain: params[:registrate].inspect
     if @class.save
       flash[:notice] = "登録しました"
       redirect_to("/registration/index")
