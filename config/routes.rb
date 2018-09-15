@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'registration/index' => 'registration#index'
   get 'registration/new' => 'registration#new'
+  get 'registration/show' => 'registration#show'
+
 
   get 'registration/mon' => 'registration#mon'
   get 'registration/tues' => 'registration#tues'
@@ -8,6 +10,7 @@ Rails.application.routes.draw do
   get 'registration/thurs' => 'registration#thurs'
   get 'registration/fri' => 'registration#fri'
   get 'registration/satur' => 'registration#satur'
+
 
   post 'registration/create' => 'registration#create'
   get 'user/new' => 'user#new'
@@ -18,7 +21,7 @@ Rails.application.routes.draw do
   get 'search' => 'user#search'
   get 'user/:id' => 'user#index'
 
-
+  get 'classlist/show' => 'classlist#show'
 
   get '/' => 'home#index'
   get 'wethreapp/index' => 'wethreapp#index'
