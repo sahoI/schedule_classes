@@ -1,57 +1,63 @@
-<div class="container">
-  <h1 class="form-header" >New User</h1>
-  <div class="form-body">
-    <%= form_for :user, url: '/user/create' do |f| %>
-      <p>
-        <%= f.text_field :name, placeholder: 'enter name' %>
-        <% if @user.errors.messages[:name].any? %>
-          <span class="error">
-            <%= @user.errors.messages[:name][0] %>
-          </span>
-        <% end %>
-      </p>
-      <p>
-        <%= f.text_field :email, placeholder: 'enter mail adless' %>
-        <% if @user.errors.messages[:email].any? %>
-          <span class="error">
-            <%= @user.errors.messages[:email][0] %>
-          </span>
-        <% end %>
-      </p>
-      <p>
-        <%= f.select :department,
-        [
-            ["経済学部","E"],
-            ["経営学部","B"],
-            ["法学部","J"],
-            ["現代社会学部","P"],
-            ["外国語学部","L"],
-            ["文化学部","C"],
-            ["理学部","S"],
-            ["コンピュータ理工学部","D"],
-            ["情報理工学部","D"],
-            ["総合生命学部","N"]
-        ]%>
-      </p>
-      <p>
-        <%= f.select :grade,
-        [
-            ["1回生", 1],
-            ["2回生", 2],
-            ["3回生", 3],
-            ["4回生", 4],
-        ]
-        %>
-      </p>
-      <p>
-        <%= f.text_field :friend_id, placeholder: 'enter friend_id' %>
-        <% if @user.errors.messages[:friend_id].any? %>
-          <span class="error">
-            <%= @user.errors.messages[:friend_id][0] %>
-          </span>
-        <% end %>
-      </p>
-      <%= f.submit %>
-    <% end %>
-  </div>
+<head>
+  <title>New User</title>
+  <link rel="stylesheet" type="text/sass" href="user.sass">
+</head>
+<div class="header">
+  <div class="header-logo">New User</div>
 </div>
+<body>
+<div class="form-body">
+  <%= form_for :user, url: '/user/create' do |f| %>
+    <p>
+      <%= f.text_field :name, placeholder: 'enter name', html: {class: 'form'} %>
+      <% if @user.errors.messages[:name].any? %>
+            <span class="error">
+              <%= @user.errors.messages[:name][0] %>
+            </span>
+      <% end %>
+    </p>
+    <p>
+      <%= f.text_field :email, placeholder: 'enter mail adless' %>
+      <% if @user.errors.messages[:email].any? %>
+            <span class="error">
+              <%= @user.errors.messages[:email][0] %>
+            </span>
+      <% end %>
+    </p>
+    <p>
+      <%= f.select :department,
+                   [
+                       ["経済学部", "E"],
+                       ["経営学部", "B"],
+                       ["法学部", "J"],
+                       ["現代社会学部", "P"],
+                       ["外国語学部", "L"],
+                       ["文化学部", "C"],
+                       ["理学部", "S"],
+                       ["コンピュータ理工学部", "D"],
+                       ["情報理工学部", "D"],
+                       ["総合生命学部", "N"]
+                   ] %>
+    </p>
+    <p>
+      <%= f.select :grade,
+                   [
+                       ["1回生", 1],
+                       ["2回生", 2],
+                       ["3回生", 3],
+                       ["4回生", 4],
+                   ]
+      %>
+    </p>
+    <p>
+      <%= f.text_field :friend_id, placeholder: 'enter friend_id' %>
+      <% if @user.errors.messages[:friend_id].any? %>
+            <span class="error">
+              <%= @user.errors.messages[:friend_id][0] %>
+            </span>
+      <% end %>
+    </p>
+    <%= f.submit %>
+  <% end %>
+</div>
+</body>
