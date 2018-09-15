@@ -3,17 +3,17 @@
     <p>
       <%= f.text_field :name, placeholder: 'enter name', html: {class: 'form'} %>
       <% if @user.errors.messages[:name].any? %>
-            <span class="error">
-              <%= @user.errors.messages[:name][0] %>
-            </span>
+        <span class="error">
+          <%= @user.errors.messages[:name][0] %>
+        </span>
       <% end %>
     </p>
     <p>
       <%= f.text_field :email, placeholder: 'enter mail adless' %>
       <% if @user.errors.messages[:email].any? %>
-            <span class="error">
-              <%= @user.errors.messages[:email][0] %>
-            </span>
+        <span class="error">
+          <%= @user.errors.messages[:email][0] %>
+        </span>
       <% end %>
     </p>
     <p>
@@ -44,9 +44,9 @@
     <p>
       <%= f.text_field :friend_id, placeholder: 'enter friend_id' %>
       <% if @user.errors.messages[:friend_id].any? %>
-            <span class="error">
-              <%= @user.errors.messages[:friend_id][0] %>
-            </span>
+        <span class="error">
+          <%= @user.errors.messages[:friend_id][0] %>
+        </span>
       <% end %>
     </p>
     <%= f.submit %>

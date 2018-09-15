@@ -1,13 +1,15 @@
-<% @users.each do |user| %>
-  <ul>
-    <li>
-      <%= user.id%>
-      <%= user.name%>
-      <%= user.email%>
-      <%= user.department%>
-      <%= user.grade%>
-      <%= user.friend_id%>
-    </li>
-  </ul>
-<% end %>
+<div class="container">
+  <% @users.each do |user| %>
+    <ul>
+      <li>
+        <%= user.id%>
+        <%= user.name%>
+        <%= user.email%>
+        <%= user.department%>
+        <%= user.grade%>
+        <%= user.friend_id%>
+      </li>
+    </ul>
+  <% end %>
 <%= link_to('新規登録','/user/new') %>
+</div>
