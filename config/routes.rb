@@ -11,7 +11,10 @@ Rails.application.routes.draw do
   get 'user/new' => 'user#new'
   get 'user/show' => 'user#show'
   post 'user/create' => 'user#create'
-  get 'user/login' => 'user#login'
+  get 'login' => 'user#login_form'
+  post 'login' => 'user#login'
+  get 'user/:id' => 'user#index'
+
 
 
   get '/' => 'home#index'

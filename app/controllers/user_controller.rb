@@ -1,4 +1,7 @@
 class UserController < ApplicationController
+  def index
+    @user = User.find_by(id: params[:id])
+  end
   def new
     @user = User.new
   end
@@ -21,7 +24,17 @@ class UserController < ApplicationController
   def post_params
     params.require(:user).permit(:name, :email, :department, :grade, :friend_id)
   end
+  def login_form
+  end
   def login
-
+    # render plain: params[:user].inspect
+    @user = User.find_by(name: params[:name], email: params[:email])
+    if @user
+      redirect_to("/user/#{@user.id}")
+    else
+      @name = params[:name]
+      @email = params[:email]
+      render("/user/new")
+    end
   end
 end
