@@ -21,4 +21,7 @@ class UserController < ApplicationController
   def post_params
     params.require(:user).permit(:name, :email, :department, :grade, :friend_id)
   end
+  def login
+
+  end
 end

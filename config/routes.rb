@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   get 'user/new' => 'user#new'
   get 'user/show' => 'user#show'
   post 'user/create' => 'user#create'
+  get 'user/login' => 'user#login'
+
 
   get '/' => 'home#index'
   get 'wethreapp/index' => 'wethreapp#index'
