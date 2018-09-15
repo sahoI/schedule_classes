@@ -23,6 +23,16 @@
       ]%>
     </p>
     <p>
+      <%= f.select :grade,
+      [
+          ["1回生", "1"],
+          ["2回生", "2"],
+          ["3回生", "3"],
+          ["4回生", "4"],
+      ]
+      %>
+    </p>
+    <p>
       <%= f.text_field :friend_id, placeholder: 'enter friend_id' %>
     </p>
     <%= f.submit %>
