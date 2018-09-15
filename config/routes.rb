@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   get 'search' => 'user#search'
   get 'user/:id' => 'user#index'
 
+  get 'classlist/new' => 'classlist#new'
+  post 'classlist/create' => 'classlist#create'
   get 'classlist/show' => 'classlist#show'
 
   get '/' => 'home#index'

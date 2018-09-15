@@ -1,15 +1,27 @@
 <div class="container">
   <div class="form-body">
-    <ul>
-      <li>Name : <%= @name %></li>
-      <li>Season : <%= @season %></li>
-      <li>Department : <%= @department %></li>
-      <li>Grade : <%= @grade %></li>
-      <li>Credit : <%= @credit %></li>
-      <li>Teacher : <%= @teacher %></li>
-      <li>Value : <%= @value  %></li>
-      <li>TextBook : <%= @textbook  %></li>
-      <li><%= link_to('scraipe', 'scraipe') %></li>
-    </ul>
+    <% @time_schedules.each do |time_schedule| %>
+      <ul>
+        <li>
+          <%= link_to(time_schedule.name, "https://syllabus.kyoto-su.ac.jp/syllabus/html/2018/#{time_schedule.id}.html") %>
+          <%= time_schedule.number %>
+          <%= time_schedule.department %>
+          <%= time_schedule.teacher %>
+          <%= time_schedule.textbook %>
+          <%= time_schedule.day_of_the_week %>
+          <%= time_schedule.time_schedule %>
+        </li>
+      </ul>
+    <% end %>
+    <!--      <li><%#= @link %></li>-->
+    <!--      <li>Name : <%#= @name %></li>-->
+    <!--      <li>Number : <%#= @number %></li>-->
+    <!--      <li>Season : <%#= @season %></li>-->
+    <!--      <li>Department : <%#= @department %></li>-->
+    <!--      <li>Grade : <%#= @grade %></li>-->
+    <!--      <li>Credit : <%#= @credit %></li>-->
+    <!--      <li>Teacher : <%#= @teacher %></li>-->
+    <!--      <li>Value : <%#= @value  %></li>-->
+    <!--      <li>TextBook : <%#= @textbook  %></li>-->
   </div>
 </div>
