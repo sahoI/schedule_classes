@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_15_164045) do
+ActiveRecord::Schema.define(version: 2018_09_15_175215) do
 
   create_table "add_register_columns", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -23,10 +23,10 @@ ActiveRecord::Schema.define(version: 2018_09_15_164045) do
     t.string "name"
     t.string "teacher"
     t.string "department"
-    t.string "day"
-    t.integer "class"
-    t.string "text"
     t.string "number"
+    t.string "textbook"
+    t.string "day_of_the_week"
+    t.integer "time_schedule"
   end
 
   create_table "hoges", force: :cascade do |t|
