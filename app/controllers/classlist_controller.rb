@@ -5,7 +5,7 @@ class ClasslistController < ApplicationController
   end
 
   def scraiping
-    for num in 201..301 do
+    for num in 1..10 do
       time_schedule = Classlist.new
       require 'nokogiri'
       require 'open-uri'
@@ -24,12 +24,12 @@ class ClasslistController < ApplicationController
       time_schedule.name = p trb[0].text
       time_schedule.number = p trb[2].text
       rb = doc.xpath('//td[@class="syllabus_item_left syllabus_frame_RB"]/span[@class="font_data"]')
-      # time_schedule.season = p rb[0].text
+      time_schedule.season = p rb[0].text
       time_schedule.department = p rb[1].text
-      # @time_schedule.grade = p rb[2].text
+      time_schedule.grade = p rb[2].text
       time_schedule.teacher = p rb[4].text
       tds = doc.xpath('//td[@class="syllabus_item_left syllabus_frame_LRB space_top_bottom"]')
-      # time_schedule.value = p tds[6].text
+      time_schedule.evaluation = p tds[6].text
       time_schedule.day_of_the_week = "月曜日"
       time_schedule.time_schedule = 1
       if p tds[7] == nil
@@ -43,7 +43,7 @@ class ClasslistController < ApplicationController
   end
 
   def post_params
-    params.require(:classlist).permit(:name, :number, :department, :teacher, :textbook, :day_of_the_week, :time_schedule)
+    params.require(:classlist).permit(:name, :number, :season, :department, :grade, :teacher, :textbook, :evaluation, :day_of_the_week, :time_schedule)
   end
 
 end
