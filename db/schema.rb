@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_16_100308) do
+ActiveRecord::Schema.define(version: 2018_09_16_150613) do
 
   create_table "add_register_columns", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -30,6 +30,20 @@ ActiveRecord::Schema.define(version: 2018_09_16_100308) do
     t.string "season"
     t.string "grade"
     t.string "evaluation"
+  end
+
+  create_table "data", force: :cascade do |t|
+    t.integer "day_of_the_week"
+    t.integer "time_schedule"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "day_data", force: :cascade do |t|
+    t.integer "day_of_the_week"
+    t.integer "time_schedule"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "hoges", force: :cascade do |t|
