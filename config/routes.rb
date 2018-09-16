@@ -22,8 +22,10 @@ Rails.application.routes.draw do
   get 'user/:id' => 'user#index'
 
   get 'classlist/new' => 'classlist#new'
+  get 'classlist/create' => 'classlist#create'
   post 'classlist/create' => 'classlist#create'
   get 'classlist/show' => 'classlist#show'
+  get 'classlist/scraiping' => 'classlist#scraiping'
 
   get '/' => 'home#index'
   get 'wethreapp/index' => 'wethreapp#index'

@@ -1,27 +1,28 @@
 <div class="container">
-  <div class="form-body">
-    <% @time_schedules.each do |time_schedule| %>
-      <ul>
-        <li>
-          <%= link_to(time_schedule.name, "https://syllabus.kyoto-su.ac.jp/syllabus/html/2018/#{time_schedule.id}.html") %>
-          <%= time_schedule.number %>
-          <%= time_schedule.department %>
-          <%= time_schedule.teacher %>
-          <%= time_schedule.textbook %>
-          <%= time_schedule.day_of_the_week %>
-          <%= time_schedule.time_schedule %>
-        </li>
-      </ul>
-    <% end %>
-    <!--      <li><%#= @link %></li>-->
-    <!--      <li>Name : <%#= @name %></li>-->
-    <!--      <li>Number : <%#= @number %></li>-->
-    <!--      <li>Season : <%#= @season %></li>-->
-    <!--      <li>Department : <%#= @department %></li>-->
-    <!--      <li>Grade : <%#= @grade %></li>-->
-    <!--      <li>Credit : <%#= @credit %></li>-->
-    <!--      <li>Teacher : <%#= @teacher %></li>-->
-    <!--      <li>Value : <%#= @value  %></li>-->
-    <!--      <li>TextBook : <%#= @textbook  %></li>-->
+  <div class="form-body table table-striped">
+    <table border="1"
+           width="100%"
+           style="table-layout: fixed;
+               padding-top: 0;"
+    >
+      <tr style="text-align: center;">
+        <td width="50px">ID</td>
+        <td width="250px">Name</tdwidth>
+<!--        <td width="100px">Number</td>-->
+        <td width="130px">Department</td>
+        <td>TextBook</td>
+      </tr>
+      <% @time_schedules.each do |time_schedule| %>
+        <tr>
+          <td><%= time_schedule.id %></td>
+          <td><%= link_to(time_schedule.name, "https://syllabus.kyoto-su.ac.jp/syllabus/html/2018/#{time_schedule.id}.html") %></td>
+<!--          <td><%#= time_schedule.number %></td>-->
+          <td><%= time_schedule.department %></td>
+          <td width="200px" style="word-wrap : break-word;"><%= time_schedule.textbook %></td>
+
+      <% end %>
+      </tr>
+    </table>
+    <%= link_to('次のスクレイピングをする', '/classlist/scraiping') %>
   </div>
 </div>
