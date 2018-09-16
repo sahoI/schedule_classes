@@ -26,6 +26,9 @@ Rails.application.routes.draw do
   post 'classlist/create' => 'classlist#create'
   get 'classlist/show' => 'classlist#show'
   get 'classlist/scraiping' => 'classlist#scraiping'
+  get 'classlist/search' => 'classlist#search'
+
+  get 'classlist/when_day' => 'classlist#when_day'
 
   get '/' => 'home#index'
   get 'wethreapp/index' => 'wethreapp#index'

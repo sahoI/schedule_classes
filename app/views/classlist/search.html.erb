@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="form-body">
+    <%= form_for(search_path, :method => 'get') do %>
+      <p>学部</p>
+      <%= text_field_tag :department %>
+
+      <% select :classlist, :department,
+                 [
+                     ["選択してください", "nil"],
+                     ["共通教育科目", "G"],
+                     ["経済学部", "E"],
+                     ["経営学部", "B"],
+                     ["法学部", "J"],
+                     ["現代社会学部", "p"],
+                     ["外国語学部", "L"],
+                     ["文化学部", "C"],
+                     ["理学部", "S"],
+                     ["コンピュータ理工学部", "D"],
+                     ["情報理工学部", "D"],
+                     ["総合生命学部", "N"]
+                 ]
+      %>
+      <div class="form-button">
+        <%= submit_tag 'Search', :name => nil %>
+      </div>
+    <% end %>
+    <% if @datas %>
+      <table>
+        <tr class="heading">
+          <td class="id">ID</td>
+          <td class="name">Name</td>
+          <!--        <td width="100px">Number</td>-->
+          <td class="department">Department</td>
+          <td>TextBook</td>
+
+          <!--        <td>Season</td>-->
+          <!--        <td>grade</td>-->
+          <!--        <td>evaluation</td>-->
+          <% @datas.each do |data| %>
+          <tr>
+            <td><%= data.id %></td>
+            <td class="name"><%= link_to(data.name, "https://syllabus.kyoto-su.ac.jp/syllabus/html/2018/#{data.id}.html") %></td>
+            <!--          <td><%#= time_schedule.number %></td>-->
+            <td><%= data.department %></td>
+            <td class="textbook">
+              <div class="over_word">
+                <%= data.textbook %>
+              </div>
+            </td>
+
+            <!--          <td><%#= time_schedule.season %></td>-->
+            <!--          <td><%#= time_schedule.grade %></td>-->
+            <!--          <td class="textbook">-->
+            <!--            <div class="over_word"><%#= time_schedule.evaluation %></div>-->
+            <!--          </td>-->
+          </tr>
+        <% end %>
+      </table>
+    <% end %>
+  </div>
+</div>
