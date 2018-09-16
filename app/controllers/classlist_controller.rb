@@ -5,7 +5,7 @@ class ClasslistController < ApplicationController
   end
 
   def scraiping
-    for num in 1..10 do
+    for num in 981..1000 do
       time_schedule = Classlist.new
       require 'nokogiri'
       require 'open-uri'
@@ -29,7 +29,14 @@ class ClasslistController < ApplicationController
       time_schedule.grade = p rb[2].text
       time_schedule.teacher = p rb[4].text
       tds = doc.xpath('//td[@class="syllabus_item_left syllabus_frame_LRB space_top_bottom"]')
-      time_schedule.evaluation = p tds[6].text
+      condition = 6 #条件
+      if p tds[condition] == nil #6
+        condition = 5
+        if p tds[condition] == nil #5
+          condition = 4
+        end
+      end
+      time_schedule.evaluation = p tds[condition].text
       time_schedule.day_of_the_week = "月曜日"
       time_schedule.time_schedule = 1
       if p tds[7] == nil

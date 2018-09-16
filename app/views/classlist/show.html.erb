@@ -1,15 +1,12 @@
 <div class="container">
-  <div class="form-body table table-striped">
-    <table border="1"
-           width="100%"
-           style="table-layout: fixed;
-               padding-top: 0;"
-    >
-      <tr style="text-align: center;">
-        <td width="50px">ID</td>
-        <td width="250px">Name</tdwidth>
+  <div class="form-body table">
+    <%= link_to('スクレイピングをする', '/classlist/scraiping') %>
+    <table>
+      <tr class="heading">
+        <td class="id">ID</td>
+        <td class="name">Name</td>
 <!--        <td width="100px">Number</td>-->
-        <td width="130px">Department</td>
+        <td class="department">Department</td>
         <td>TextBook</td>
 
 <!--        <td>Season</td>-->
@@ -19,17 +16,22 @@
       <% @time_schedules.each do |time_schedule| %>
         <tr>
           <td><%= time_schedule.id %></td>
-          <td><%= link_to(time_schedule.name, "https://syllabus.kyoto-su.ac.jp/syllabus/html/2018/#{time_schedule.id}.html") %></td>
+          <td class="name"><%= link_to(time_schedule.name, "https://syllabus.kyoto-su.ac.jp/syllabus/html/2018/#{time_schedule.id}.html") %></td>
 <!--          <td><%#= time_schedule.number %></td>-->
           <td><%= time_schedule.department %></td>
-          <td width="200px" style="word-wrap : break-word;"><%= time_schedule.textbook %></td>
+          <td class="textbook">
+            <div class="over_word">
+              <%= time_schedule.textbook %>
+            </div>
+          </td>
 
 <!--          <td><%#= time_schedule.season %></td>-->
 <!--          <td><%#= time_schedule.grade %></td>-->
-<!--          <td style="word-wrap : break-word;"><%#= time_schedule.evaluation %></td>-->
+<!--          <td class="textbook">-->
+<!--            <div class="over_word"><%#= time_schedule.evaluation %></div>-->
+<!--          </td>-->
         </tr>
       <% end %>
     </table>
-    <%= link_to('次のスクレイピングをする', '/classlist/scraiping') %>
   </div>
 </div>
