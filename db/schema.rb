@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_17_044357) do
+ActiveRecord::Schema.define(version: 2018_09_17_141527) do
 
   create_table "add_register_columns", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -32,6 +32,17 @@ ActiveRecord::Schema.define(version: 2018_09_17_044357) do
     t.string "evaluation"
   end
 
+  create_table "courses", force: :cascade do |t|
+    t.integer "mon"
+    t.integer "tues"
+    t.integer "wednes"
+    t.integer "thurs"
+    t.integer "fri"
+    t.integer "satur"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "data", force: :cascade do |t|
     t.integer "day_of_the_week"
     t.integer "time_schedule"
@@ -48,9 +59,29 @@ ActiveRecord::Schema.define(version: 2018_09_17_044357) do
     t.string "class_condition"
   end
 
+  create_table "fris", force: :cascade do |t|
+    t.integer "first"
+    t.integer "second"
+    t.integer "third"
+    t.integer "fourth"
+    t.integer "fifth"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "hoges", force: :cascade do |t|
     t.string "name"
     t.date "sales_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "mons", force: :cascade do |t|
+    t.integer "first"
+    t.integer "second"
+    t.integer "third"
+    t.integer "fourth"
+    t.integer "fifth"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -66,6 +97,26 @@ ActiveRecord::Schema.define(version: 2018_09_17_044357) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "thurs", force: :cascade do |t|
+    t.integer "first"
+    t.integer "second"
+    t.integer "third"
+    t.integer "fourth"
+    t.integer "fifth"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tues", force: :cascade do |t|
+    t.integer "first"
+    t.integer "second"
+    t.integer "third"
+    t.integer "fourth"
+    t.integer "fifth"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -74,6 +125,16 @@ ActiveRecord::Schema.define(version: 2018_09_17_044357) do
     t.string "department"
     t.string "friend_id"
     t.integer "grade"
+  end
+
+  create_table "wednes", force: :cascade do |t|
+    t.integer "first"
+    t.integer "second"
+    t.integer "third"
+    t.integer "fourth"
+    t.integer "fifth"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "when_days", force: :cascade do |t|

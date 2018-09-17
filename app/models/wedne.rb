@@ -1,0 +1,2 @@
+class Wedne < ApplicationRecord
+end

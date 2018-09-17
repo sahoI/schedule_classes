@@ -1,0 +1,2 @@
+class Tue < ApplicationRecord
+end

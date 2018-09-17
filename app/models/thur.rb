@@ -1,0 +1,2 @@
+class Thur < ApplicationRecord
+end
