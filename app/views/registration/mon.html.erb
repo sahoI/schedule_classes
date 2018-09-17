@@ -1,9 +1,0 @@
-<div class="container">
-  <h1 class="form-header" >授業を登録する</h1>
-  <%= form_for :registrate, url: '/registration/create' do |f| %>
-    <p>
-      <%= f.text_field :name, placeholder: 'enter name' %>
-    </p>
-    <%= f.submit %>
-  <% end %>
-</div>
