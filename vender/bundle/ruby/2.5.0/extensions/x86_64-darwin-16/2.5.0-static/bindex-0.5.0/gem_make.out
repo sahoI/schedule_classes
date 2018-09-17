@@ -1,0 +1,15 @@
+current directory: /Users/igamisaho/home/programing/Ruby_on_Rails/natugate/schedule/vender/bundle/ruby/2.5.0/gems/bindex-0.5.0/ext/bindex
+/Users/igamisaho/.rbenv/versions/2.5.0/bin/ruby -r ./siteconf20180917-46497-1mhbo64.rb extconf.rb
+creating Makefile
+
+current directory: /Users/igamisaho/home/programing/Ruby_on_Rails/natugate/schedule/vender/bundle/ruby/2.5.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" clean
+
+current directory: /Users/igamisaho/home/programing/Ruby_on_Rails/natugate/schedule/vender/bundle/ruby/2.5.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR="
+compiling cruby.c
+linking shared-object bindex/cruby.bundle
+
+current directory: /Users/igamisaho/home/programing/Ruby_on_Rails/natugate/schedule/vender/bundle/ruby/2.5.0/gems/bindex-0.5.0/ext/bindex
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20180917-46497-1ijo26i/bindex
