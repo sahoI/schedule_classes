@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="form-body">
+    <% num = 1 %>
+    <table>
+      <tr>
+        <td>num</td>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Day of the Week</td>
+        <td>Time Schedule</td>
+        <td>Class Condition</td>
+      </tr>
+      <% @day_datas.each do |day_data| %>
+        <tr>
+          <td><%= num %></td>
+          <td><%= day_data.id %></td>
+          <td><%= day_data.name %></td>
+          <% if day_data.day_of_the_week == 1 %>
+            <td>月曜日</td>
+          <% else %>
+            <td>なし</td>
+          <% end %>
+          <td><%= day_data.time_schedule %></td>
+          <td><%= day_data.class_condition %></td>
+        </tr>
+        <% num += 1 %>
+      <% end %>
+    </table>
+  </div>
+</div>

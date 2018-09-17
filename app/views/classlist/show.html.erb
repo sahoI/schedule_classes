@@ -5,31 +5,42 @@
       <tr class="heading">
         <td class="id">ID</td>
         <td class="name">Name</td>
-<!--        <td width="100px">Number</td>-->
+        <!--        <td width="100px">Number</td>-->
         <td class="department">Department</td>
         <td>TextBook</td>
-
-<!--        <td>Season</td>-->
-<!--        <td>grade</td>-->
-<!--        <td>evaluation</td>-->
+        <td>DayoftheWeek</td>
+        <td>Time</td>
+        <!--        <td>Season</td>-->
+        <!--        <td>grade</td>-->
+        <!--        <td>evaluation</td>-->
       </tr>
       <% @time_schedules.each do |time_schedule| %>
         <tr>
           <td><%= time_schedule.id %></td>
           <td class="name"><%= link_to(time_schedule.name, "https://syllabus.kyoto-su.ac.jp/syllabus/html/2018/#{time_schedule.id}.html") %></td>
-<!--          <td><%#= time_schedule.number %></td>-->
+          <!--          <td><%#= time_schedule.number %></td>-->
           <td><%= time_schedule.department %></td>
           <td class="textbook">
             <div class="over_word">
               <%= time_schedule.textbook %>
             </div>
           </td>
+          <td><%= time_schedule.day_of_the_week %></td>
+          <td>
+            <% num = time_schedule.time_schedule %>
+            <% if num > 10 %>
+              <% str = num.to_s.split("") %>
+              <%= str[0] %>限/<%= str[1] %>限
+            <% else %>
+              <%=num %>限
+            <% end %>
+          </td>
 
-<!--          <td><%#= time_schedule.season %></td>-->
-<!--          <td><%#= time_schedule.grade %></td>-->
-<!--          <td class="textbook">-->
-<!--            <div class="over_word"><%#= time_schedule.evaluation %></div>-->
-<!--          </td>-->
+          <!--          <td><%#= time_schedule.season %></td>-->
+          <!--          <td><%#= time_schedule.grade %></td>-->
+          <!--          <td class="textbook">-->
+          <!--            <div class="over_word"><%#= time_schedule.evaluation %></div>-->
+          <!--          </td>-->
         </tr>
       <% end %>
     </table>

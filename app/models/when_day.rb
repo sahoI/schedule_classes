@@ -1,0 +1,2 @@
+class WhenDay < ApplicationRecord
+end

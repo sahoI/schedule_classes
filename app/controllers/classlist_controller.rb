@@ -4,23 +4,48 @@ class ClasslistController < ApplicationController
     @time_schedules = Classlist.all
   end
 
-  def when_day
-    @data = DayDatum.new
-    # url = 'https://webrs.kyoto-su.ac.jp/sv/001/script/kitei_A0A03201701.js?1537106977430'
-    # charset = nil
-    #
-    # html = open(url) do |f|
-    #   charset = f.charset # 文字種別を取得
-    #   f.read # htmlを読み込んで変数htmlに渡す
-    # end
-    # doc = Nokogiri::HTML.parse(html, nil, charset)
-    # @data.day_of_the_week = 1
-    # @data.time_schedule = 1
-    File.read("app/view/classlist/datas.js")
+  def when_day_show #show
+    @day_datas = DayDatum.all
+  end
+
+  def day_show
+
+    require 'nokogiri'
+    require 'open-uri'
+    require 'bundler'
+
+    url = "https://syllabus.kyoto-su.ac.jp/syllabus_search/"
+    charset = nil
+    html = open(url) do |f|
+      charset = f.charset # 文字種別を取得
+      f.read # htmlを読み込んで変数htmlに渡す
+    end
+    doc = Nokogiri::HTML.parse(html, nil, charset)
+    agent = Mechanize.new
+    agent.page.link_with(:text => "検索").buttons
+
 
   end
+
+  def when_day
+    # File.open("data2.text") {|f|
+    #   # for num in 100 #1996
+    #   1996.times do |i|
+    #     @day_data = DayDatum.new
+    #     str = p f.gets # 1行目
+    #     strArray = str.split(",")
+    #     @day_data.id = strArray[13].delete("^0-9")
+    #     @day_data.name = strArray[2]
+    #     @day_data.class_condition = strArray[14][/\（".*?"\）/]
+    #     @day_data.save
+    #   end
+    # }
+
+    redirect_to('/classlist/when_day_show')
+  end
+
   def scraiping
-    for num in 1..4218 do
+    for num in 1..5 do
       time_schedule = Classlist.new
       require 'nokogiri'
       require 'open-uri'

@@ -29,6 +29,9 @@ Rails.application.routes.draw do
   get 'classlist/search' => 'classlist#search'
 
   get 'classlist/when_day' => 'classlist#when_day'
+  get 'classlist/when_day_show' => 'classlist#when_day_show'
+  get 'classlist/day_show' => 'classlist#when_day_show'
+  get 'classlist/day' => 'classlist#when_day_show'
 
   get '/' => 'home#index'
   get 'wethreapp/index' => 'wethreapp#index'
