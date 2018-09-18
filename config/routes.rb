@@ -1,18 +1,12 @@
 Rails.application.routes.draw do
   get 'registration/index' => 'registration#index'
   get 'registration/new' => 'registration#new'
-  get 'registration/show' => 'registration#show'
-
-
-  get 'registration/mon' => 'registration#mon'
-  get 'registration/tues' => 'registration#tues'
-  get 'registration/wednes' => 'registration#wednes'
-  get 'registration/thurs' => 'registration#thurs'
-  get 'registration/fri' => 'registration#fri'
-  get 'registration/satur' => 'registration#satur'
-
 
   post 'registration/create' => 'registration#create'
+
+  get 'course/choice' => 'course#choice'
+  post 'course/choice' => 'course#choice'
+
   get 'user/new' => 'user#new'
   get 'user/show' => 'user#show'
   post 'user/create' => 'user#create'

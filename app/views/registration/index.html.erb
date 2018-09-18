@@ -8,54 +8,104 @@
       <th>4</th>
       <th>5</th>
     </tr>
+    <%# @courses_count.times do |c| %>
+      <%#= @classlist = Classlist.find_by(id: @courses[c].class_id) %>
+      <%#= d = @classlist.day_of_the_week[0] %>
+      <%#= t = @classlist.time_schedule %>
+      <%#  @monday = [nil, nil, nil, nil, nil], @thes = [nil, nil, nil, nil, nil], @wednes = [nil, nil, nil, nil, nil], @thurs = [nil, nil, nil, nil, nil], @fri = [nil, nil, nil, nil, nil] %>
+      <%# if d == "月" %>
+        <%# @monday[t - 1] = @classlist %>
+      <%# elsif d == "火" %>
+        <%# @thes[t - 1] = @classlist %>
+      <%# elsif d == "水" %>
+        <%# @wednes[t - 1] = @classlist %>
+      <%# elsif d == "木" %>
+        <%# @thurs[t - 1] = @classlist %>
+      <%# elsif d == "金" %>
+        <%# @fri[t - 1] = @classlist %>
+      <%# end %>
+    <%# end %>
     <tr>
       <td>Monday</td>
-      <td><%=  %></td>
-      <td><%=  %></td>
-      <td><%=  %></td>
-      <td><%=  %></td>
-      <td><%=  %></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <%# 5.times do |a| %>
+        <%# if @mon == nil %>
+<!--          <td></td>-->
+        <%# else %>
+<!--          <td><%#= @mon.name %></td>-->
+        <%# end %>
+      <%# end %>
     </tr>
     <tr>
       <td>Tuesday</td>
-      <td><%=  %></td>
-      <td><%=  %></td>
-      <td><%=  %></td>
-      <td><%=  %></td>
-      <td><%=  %></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <%# 5.times do |a| %>
+        <%# if @thes[a] == nil %>
+<!--          <td></td>-->
+        <%# else %>
+<!--          <td><%#= @thes[a].name %></td>-->
+        <%# end %>
+      <%# end %>
     </tr>
     <tr>
       <td>Wednesday</td>
-      <td><%=  %></td>
-      <td><%=  %></td>
-      <td><%=  %></td>
-      <td><%=  %></td>
-      <td><%=  %></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <%# 5.times do |a| %>
+        <%# if @wednes[a] == nil %>
+<!--          <td></td>-->
+        <%# else %>
+<!--          <td><%#= @wednes[a].name %></td>-->
+        <%# end %>
+      <%# end %>
     </tr>
     <tr>
       <td>Thursday</td>
-      <td><%=  %></td>
-      <td><%=  %></td>
-      <td><%=  %></td>
-      <td><%=  %></td>
-      <td><%=  %></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <%# 5.times do |a| %>
+        <%# if @thurs[a] == nil %>
+<!--          <td></td>-->
+        <%# else %>
+<!--          <td><%#= @thurs[a].name %></td>-->
+        <%# end %>
+      <%# end %>
     </tr>
     <tr>
       <td>Friday</td>
-      <td><%=  %></td>
-      <td><%=  %></td>
-      <td><%=  %></td>
-      <td><%=  %></td>
-      <td><%=  %></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <%# 5.times do |a| %>
+        <%# if @fri[a] == nil %>
+<!--          <td></td>-->
+        <%# else %>
+<!--          <td><%#= @fri[a].name %></td>-->
+        <%# end %>
+      <%# end %>
     </tr>
-    <tr>
-      <td>Saturday</td>
-      <td><%=  %></td>
-      <td><%=  %></td>
-      <td><%=  %></td>
-      <td><%=  %></td>
-      <td><%=  %></td>
-    </tr>
+    <!--    <tr>-->
+    <!--      <td>Saturday</td>-->
+    <%# 5.times do |a| %>
+    <!--        <td><%#= @classlist.name%></td>-->
+    <%# end %>
+    <!--    </tr>-->
   </table>
   <%= link_to('新規登録', '/classlist/show') %>
 </div>
