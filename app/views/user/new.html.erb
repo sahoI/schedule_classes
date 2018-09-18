@@ -2,15 +2,17 @@
   <div class="form-body">
     <%= form_for :user, url: '/user/create' do |f| %>
       <p>
-        <%= f.text_field :name, placeholder: 'enter name', html: {class: 'form'} %>
+      <div class="form">
+        <%= f.text_field :name, placeholder: 'enter name', :size=>"60" %>
         <% if @user.errors.messages[:name].any? %>
         <span class="error">
           <%= @user.errors.messages[:name][0] %>
         </span>
         <% end %>
+      </div>
       </p>
       <p>
-        <%= f.text_field :email, placeholder: 'enter mail adless' %>
+        <%= f.text_field :email, placeholder: 'enter mail adless', :size=>"60" %>
         <% if @user.errors.messages[:email].any? %>
         <span class="error">
           <%= @user.errors.messages[:email][0] %>
@@ -30,7 +32,8 @@
                          ["コンピュータ理工学部", "D"],
                          ["情報理工学部", "D"],
                          ["総合生命学部", "N"]
-                     ] %>
+                     ]
+        %>
       </p>
       <p>
         <%= f.select :grade,
@@ -43,7 +46,7 @@
         %>
       </p>
       <p>
-        <%= f.text_field :friend_id, placeholder: 'enter friend_id' %>
+        <%= f.text_field :friend_id, placeholder: 'enter friend_id is 8 words', :size=>"60" %>
         <% if @user.errors.messages[:friend_id].any? %>
         <span class="error">
           <%= @user.errors.messages[:friend_id][0] %>

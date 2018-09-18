@@ -1,20 +1,102 @@
 <div class="container">
-  <h1>My Page</h1>
-  <ul>
-    <li>
-      <%= @user.name%>
-    </li>
-    <li>
-      <%= @user.email%>
-    </li>
-    <li>
-      <%= @user.department%>
-    </li>
-    <li>
-      <%= @user.grade%>回生
-    </li>
-    <li>
-      <%= @user.friend_id%>
-    </li>
-  </ul>
+  <h1>Information Page</h1>
+  <div class="main">
+    <ul>
+      <div class="category">Name</div>
+      <li>
+        <%= @user.name %>
+      </li>
+      <li>
+        <% @user.email %>
+      </li>
+      <div class="category">Department</div>
+      <li>
+        <% if @user.department == "E" %>
+          <% department = "経済" %>
+        <% elsif @user.department == "B" %>
+          <% department = "経営" %>
+        <% elsif @user.department == "J" %>
+          <% department = "法" %>
+        <% elsif @user.department == "P" %>
+          <% department = "現社" %>
+        <% elsif @user.department == "L" %>
+          <% department = "外国語" %>
+        <% elsif @user.department == "C" %>
+          <% department = "文化" %>
+        <% elsif @user.department == "S" %>
+          <% department = "理" %>
+        <% elsif @user.department == "D" %>
+          <% department = "情報理工/コンピュータ理工" %>
+        <% elsif @user.department == "N" %>
+          <% department = "総合生命科" %>
+        <% end %>
+        <%= department %>学部
+      </li>
+      <div class="category">Grade</div>
+      <li>
+        <%= @user.grade %>回生
+      </li>
+      <table class="table table-striped">
+        <tr>
+          <th>Classes</th>
+          <th>1</th>
+          <th>2</th>
+          <th>3</th>
+          <th>4</th>
+          <th>5</th>
+        </tr>
+        <tr>
+          <td>Monday</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Tuesday</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Wednesday</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Thursday</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Friday</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Saturday</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
+      <li>
+        <% @user.friend_id %>
+      </li>
+    </ul>
+  </div>
 </div>

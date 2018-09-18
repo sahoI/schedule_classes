@@ -1,15 +1,25 @@
 <div class="container">
-  <% @users.each do |user| %>
-    <ul>
-      <li>
-        <%= user.id%>
-        <%= user.name%>
-        <%= user.email%>
-        <%= user.department%>
-        <%= user.grade%>
-        <%= user.friend_id%>
-      </li>
-    </ul>
-  <% end %>
-<%= link_to('新規登録','/user/new') %>
+  <h1>User Information</h1>
+  <%= link_to('新規登録', '/user/new') %>
+  <table>
+    <tr>
+      <td>ID</td>
+      <td>Name</td>
+      <td>Email</td>
+      <td>Department</td>
+      <td>Grade</td>
+      <td>FriendID</td>
+    </tr>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.id %></td>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+        <td><%= user.department %></td>
+        <td><%= user.grade %></td>
+        <td><%= user.friend_id %></td>
+      </tr>
+    <% end %>
+  </table>
+
 </div>

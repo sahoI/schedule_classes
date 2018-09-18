@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'registration/index' => 'registration#index'
+  get 'registration/:id' => 'registration#index'
   get 'registration/new' => 'registration#new'
   get 'registration/show' => 'registration#show'
 
