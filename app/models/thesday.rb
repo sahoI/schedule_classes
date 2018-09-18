@@ -1,0 +1,2 @@
+class Thesday < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class Wednesday < ApplicationRecord
+end

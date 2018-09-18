@@ -1,6 +1,6 @@
-class CreateClasslists < ActiveRecord::Migration[5.2]
+class CreateCourses < ActiveRecord::Migration[5.2]
   def change
-    create_table :classlists do |t|
+    create_table :courses do |t|
       t.integer :user_id
       t.integer :class_id
       t.timestamps
