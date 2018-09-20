@@ -1,6 +1,7 @@
 class ClasslistController < ApplicationController
 
   def show
+    @class = Course.new
     @time_schedules = Classlist.all
   end
 

@@ -15,7 +15,7 @@ class UserController < ApplicationController
     # render plain: params[:user].inspect
     if @user.save
       # flash[:notice] = "登録しました"
-      redirect_to("/user/show")
+      redirect_to("/registration/index")
     else
       # flash[:notice] = "登録できませんでした"
       render("/user/new")

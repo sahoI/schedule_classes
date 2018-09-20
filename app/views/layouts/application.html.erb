@@ -13,11 +13,11 @@
 <body>
 <header>
   <div class="header-logo">
-    Schedule
+    履修登録
   </div>
   <ul class="header-menu">
     <li>
-      <%= link_to("ユーザー一覧", "/user/show") %><!--      後からは必要ない-->
+      <% link_to("ユーザー一覧", "/user/show") %><!--      後からは必要ない-->
     </li>
     <li>
       <%= link_to("ログイン", "/login") %>
@@ -33,7 +33,7 @@
       <%= link_to("友達検索", "/search") %>
     </li>
     <li>
-      <%= link_to("授業検索", "/classlist/show") %>
+      <%= link_to("授業一覧", "/classlist/show") %>
     </li>
   </ul>
 </header>
