@@ -10,11 +10,10 @@
     </tr>
     <tr>
       <td>Monday</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <% @courses.each do |course| %>
+        <% class1 = Classlist.find_by(id: course.class_id) %>
+        <td><%= class1.name %></td>
+      <% end %>
     </tr>
     <tr>
       <td>Tuesday</td>
@@ -57,5 +56,5 @@
       <td></td>
     </tr>
   </table>
-  <%= link_to('新規登録', '/registration/new') %>
+  <%= link_to('新規登録', '/registration/show') %>
 </div>

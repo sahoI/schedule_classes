@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="form-body table table-striped">
+    <%= form_tag("/registration/create") do %>
+      ClassID<input name="class_id">
+      <input type="submit" value="登録">
+    <% end %>
+    <table border="1"
+           width="100%"
+           style="table-layout: fixed;
+               padding-top: 0;"
+    >
+      <tr style="text-align: center;">
+        <td class="id">ID</td>
+        <td class="id">ClassID</td>
+        <td class="name">Name</td>
+        <!--        <td width="100px">Number</td>-->
+        <td class="department">Department</td>
+        <td>TextBook</td>
+
+        <!--        <td>Season</td>-->
+        <!--        <td>grade</td>-->
+        <!--        <td>evaluation</td>-->
+      </tr>
+      <% num = 1 %>
+      <% @time_schedules.each do |time_schedule| %>
+        <tr>
+          <td><%= num %></td>
+          <td><%= time_schedule.id %></td>
+          <td><%= link_to(time_schedule.name, "https://syllabus.kyoto-su.ac.jp/syllabus/html/2018/#{time_schedule.id}.html") %></td>
+          <!--          <td><%#= time_schedule.number %></td>-->
+          <td><%= time_schedule.department %></td>
+          <td class="textbook">
+            <div class="over_word">
+              <%= time_schedule.textbook %>
+            </div>
+          </td>
+
+          <!--          <td><%#= time_schedule.season %></td>-->
+          <!--          <td><%#= time_schedule.grade %></td>-->
+          <!--          <td style="word-wrap : break-word;"><%#= time_schedule.evaluation %></td>-->
+        </tr>
+        <% num += 1 %>
+      <% end %>
+    </table>
+  </div>
+</div>
