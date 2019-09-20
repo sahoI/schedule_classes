@@ -1,0 +1,27 @@
+<% require 'mechanize' %>
+
+<% agent = Mechanize.new %>
+<%# agent.max_history = 2 %>
+<% page = agent.get('https://syllabus.kyoto-su.ac.jp/syllabus_search/') %>
+<% page.encoding = 'Shift_JIS' %>
+
+<% search_page = agent.click() %>
+
+<%# require 'nokogiri' %>
+<%# require 'open-uri' %>
+
+<%# url = 'https://qiita.com/search?q=ruby' %>
+<%# charset = nil %>
+
+<%# html = open(url) do |f| %>
+  <%# charset = f.charset %>
+  <%# f.read %>
+<%# end %>
+
+
+
+
+<%# doc = Nokogiri::HTML.parse(html, nil, charset) %>
+<%# doc.xpath('//h1[@class="searchResult_itemTitle"]').each do |node| %>
+  <%#= p node.css('a').inner_text %>
+<%# end %>

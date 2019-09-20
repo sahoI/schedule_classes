@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'classlist/scraiping' => 'classlist#scraiping'
 
   get '/' => 'home#index'
+  get '/scraiping' => 'home#scraiping'
   get 'wethreapp/index' => 'wethreapp#index'
   get 'wethreapp/show' => 'wethreapp#show'
   get 'wethreapp/scraipe' => 'wethreapp#scraipe'
